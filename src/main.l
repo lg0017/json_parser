@@ -11,6 +11,42 @@ void yyerror(char *);
 %%
 
 
+(["]{1}([a-zA-Z0-9]+[ ]*)+["]{1}[\n]*) {
+    return STRING;
+}
+
+([0-9]+[.]{1}[0-9]+) {
+	return FLOAT;
+}
+
+([0-9]+) {
+	return INTEIRO;
+}
+[:] {
+          return DOIS_PONTOS;
+}
+[,][\n]* {
+          return VIRGULA;
+}
+[{]   {
+          return ABRIU_CHAVES;
+}
+[}]   {
+          return FECHOU_CHAVES;
+}
+[[]  {
+          return ABRIU_COLCHETE;
+}
+[]]   {
+          return FECHOU_COLCHETE;
+}
+
+[ \t]+ ; 
+
+[[:space:]]+ ;
+
+. ;
+
 
 %%
 
