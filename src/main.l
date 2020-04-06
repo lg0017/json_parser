@@ -1,4 +1,7 @@
-
+/* Data de submissao: 06/04/2020
+ * Nome: Luiz Guilherme Silva Moreira
+ * RA: 202391
+ */
 %{
 #include <stdlib.h>
 void yyerror(char *);
